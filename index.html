@@ -4,113 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      <style>
-        body {
-          text-align: center;
-          margin: 0;
-          text-size-adjust: calc(100%);
-          padding: 0;
-          background-image: url("https://ctfassets.ksldigital.com/0wjmk6wgfops/4KuzJkBNRjvK7qaiGdpY3I/e15f4f172dec7e80c4130cedf6b61ec0/95baf54302_60236543-90f9-4198-a748-327ddd0d3840.jpg?w=1280&h=800&fit=fill&f=center&q=80");
-          background-size: cover;
-        }
-        nav ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-        }
-        nav li {
-          float: left;
-        }
-        nav li:hover {
-          background-color: #111;
-        }
-        nav li {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-        .flex-col {
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-        }
-        .card {
-          background-color: #b1c4c5cc;
-          border-radius: 10px;
-          padding: 10px;
-          margin: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          width: 320px;
-          opacity: 0.95;
-          display: flex;             
-          align-items: center;       
-          justify-content: space-between;
-          gap: 12px;
-        }
-        .weatherIcon {
-          width: 100px;
-          height: 100px;
-          object-fit: contain;        
-          flex-shrink: 0;
-        }
-        .col-head {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-        .temp-data {
-          font-size: 20px;
-          margin-top: 10px;
-        }
-        header,
-        h1{
-          margin: 0;
-          padding: 0;
-          display: block;
-          background-color: darkgray;
-          font-size: 24 px;
-          margin-top: 0px;
-          width: 100%;
-        }
-        h2, 
-        h3,
-        h4,
-        h5,
-        h6 {
-          margin: 0;
-          padding: 0;
-          display: block;
-          font-size: 16 px;
-          margin-top: 0px;
-          width: 100%;
-        }
-        main {
-            text-align: center;
-        }
-        main ul {
-            list-style-type: none;
-            position: center;
-            .card {
-                background-color: #b1c4c5cc;
-                border-radius: 10px;
-                padding: 20px;
-                margin: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                width: 300px;
-                opacity: 0.9;
-                position: center;
-            }
-        }
-      </style>
       <h1>Tooele Weather</h1>
     </header>
+
     <nav>
       <ul>
         <li>Home</li>
@@ -119,156 +20,127 @@
         <li style="float: right">About</li>
       </ul>
     </nav>
-    <main style="font-size: larger;">
-      <hr />
-      <section class="Weather-Section">
+
+    <main>
+      <!-- WEATHER SECTION -->
+      <section class="weather-section">
         <div class="page">
-     <strong><p style="text-align: center;">Latest Weather</p>
-      <div class="archive">
-        <article class="article">
-          <section id="stats">
-            <div class="Summary">
-      <p style="text-align: center;">Weather Summary</p>
-      <p style="text-align: center;"> Tooele City, UT 84074</p> </strong>
-      
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center;">
-          <li>
-            <div class="card" style="text-align: left;
-            ">
-              <div>
-                <h2>Today's Weather</h2>
+          <h2>Latest Weather</h2>
+
+          <div class="archive">
+            <!-- Weather Summary -->
+            <article class="article-weather">
+              <div class="weather-text">
+                <h2>Weather Summary</h2>
+                <h3>Tooele City, UT 84074</h3>
+
                 <div>Temperature: <span id="temperature">55</span>°F</div>
                 <div>Feels Like: <span id="feelsLike">54</span>°F</div>
                 <div>Humidity: <span id="humidity">42</span>%</div>
                 <div>Wind Speed: <span id="windSpeed">6</span> mph S</div>
                 <div>Condition: <span id="condition">Cloudy</span></div>
               </div>
-              <img id="weatherIconMain" class="weatherIcon" src="https://img.icons8.com/?size=80&id=99328&format=png" alt="Clouds">
-            </div>
-          </section>
-        </article>
-          </li>
-        </ul>
-        <div class="article-five-day">
-          <Article id="forecastContainer">
-        <h2 style="margin-top: 40px; text-align: left;">5-Day Forecast</h2>
-        <div class="flex-col">
-        <div class="card">
-        <span id="dayTitle1" class="col-head">Wednesday</span>
-        <img id="weatherIcon1" class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" alt="Partly Cloudy"/>
-        <span class="temp-data">
-          <span id="data1"></span> 57<span>°F</span>
-        </span>
-      </div>
-        <div class="card">
-            <span id="dayTitle2" class="col-head">Thursday</span>
-            <img id="weatherIcon2" class="weatherIcon" src="https://img.icons8.com/?size=80&id=42203&format=png" alt="Sunny" />
-            <span class="temp-data">
-            <span id="data2"></span> 57<span>°F</span>
-            </span>
-        </div>
-        <div class="card">
-            <span id="dayTitle3" class="col-head">Friday</span>
-            <img id="weatherIcon3" class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" alt="Partly Cloudy"/>
-            <span class="temp-data">
-            <span id="data3"></span> 55<span>°F</span>
-            </span>
-        </div>
-        <div class="card">
-            <span id="dayTitle4" class="col-head">Saturday</span>
-            <img id="weatherIcon4" class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" alt="Partly Cloudy" />
-            <span class="temp-data">
-            <span id="data4"></span> 54<span>°F</span>
-            </span>
-        </div>
-        <div class="card">
-            <span id="dayTitle5" class="col-head">Sunday</span>
-            <img id="weatherIcon5" class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" alt="Partly Cloudy"/>
-            <span class="temp-data">
-            <span id="data5"></span> 52<span>°F</span>
-            </span>
-        </div>
-      </div>
-      </Article>
-        </div>
-      </div>
-        </section>
-      <hr />
-      <section style="text-align: left;" class="news-section" margin="0" padding="0">
-        <div class="page">
-            <h1>Latest News</h1>
-            <div class="archive">
-                <article class="article">
-                    <img 
-                    id="header-img" 
-                    alt="Main Article" />
-                    <h2>
-                        <a id="header-article"></a>
-                    </h2>
-                                            <p id="header-desc"> No Article Description</p>
-                </article>
-            </section>
-            <section style="text-align: left; background-color: rgba(211, 211, 211, 0.253); width: 400px;">
-<article class="article">
-    <img 
-    id="article-img-1"
-    src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2" 
-    alt="main article" 
-    />
-    <h3>
-        <a id="article-link-1">No Article Title</a>
-    </h3>
-    <p id="article-desc-1"> No Article Description</p>
-</article>
-        </div>
-            </section>
-<section style="text-align: left; background-color: rgba(211, 211, 211, 0.253); width: 400px;">        <article class="article">
-    <img
-    id="article-img-2"
-    src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2"
-    alt="main article"
-    />
-    <h3>
-        <a id="article-link-2">No Article Title</a>
-    </h3>
-    <p id="article-desc-2"> No Article Description</p>
-</article>
-</div>
-<section style="text-align: left; background-color: rgba(211, 211, 211, 0.253); width: 400px;">        <article class="article">
-    <img
-    id="article-img-3"
-    src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2"
-    alt="main article"
-    />
-    <h3>
-        <a id="article-link-3">No Article Title</a>
-    </h3>
-    <p id="article-desc-3"> No Article Description</p>
-</article>
-</div>
-<section style="text-align: left; background-color: rgba(211, 211, 211, 0.253); width: 400px;">                <article class="article">
-    <img
-    id="article-img-4"
-    src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2"
-    alt="main article"
-    />
-    <h3>
-        <a id="article-link-4">No Article Title</a> 
-    </h3>
-    <p id="article-desc-4"> No Article Description</p>
-</article>
-            </div>
-    </section>
 
+              <img
+                id="weatherIconMain"
+                class="weatherIcon"
+                src="https://img.icons8.com/?size=120&id=99328&format=png"
+                alt="Cloudy"
+              />
+            </article>
+
+            <!-- 5 Day Forecast -->
+            <div class="article-five-day">
+              <article id="forecastContainer">
+                <h2>5-Day Forecast</h2>
+
+                <div class="forecast-row">
+                  <div class="card">
+                    <span class="col-head">Wednesday</span>
+                    <img class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" />
+                    <span class="temp-data">57°F</span>
+                  </div>
+
+                  <div class="card">
+                    <span class="col-head">Thursday</span>
+                    <img class="weatherIcon" src="https://img.icons8.com/?size=80&id=42203&format=png" />
+                    <span class="temp-data">57°F</span>
+                  </div>
+
+                  <div class="card">
+                    <span class="col-head">Friday</span>
+                    <img class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" />
+                    <span class="temp-data">55°F</span>
+                  </div>
+
+                  <div class="card">
+                    <span class="col-head">Saturday</span>
+                    <img class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" />
+                    <span class="temp-data">54°F</span>
+                  </div>
+
+                  <div class="card">
+                    <span class="col-head">Sunday</span>
+                    <img class="weatherIcon" src="https://img.icons8.com/?size=80&id=43459&format=png" />
+                    <span class="temp-data">52°F</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWS SECTION -->
+      <section class="news-section">
+        <div class="page">
+          <h2>Latest News</h2>
+
+          <div class="archive">
+            <!-- Featured Article -->
+            <article class="article">
+              <img
+                src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg"
+                alt="Main Article"
+              />
+              <h2>No Article Title</h2>
+              <p>No Article Description</p>
+            </article>
+
+            <!-- Smaller Articles -->
+            <article class="article">
+              <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" />
+              <h3>No Article Title</h3>
+              <p>No Article Description</p>
+            </article>
+
+            <article class="article">
+              <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" />
+              <h3>No Article Title</h3>
+              <p>No Article Description</p>
+            </article>
+
+            <article class="article">
+              <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" />
+              <h3>No Article Title</h3>
+              <p>No Article Description</p>
+            </article>
+            <article class="article">
+              <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg" />
+              <h3>No Article Title</h3>
+              <p>No Article Description</p>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer style="font-size: large;
-    text-align: center;
-    margin-top: 40px;
-    color: white;
-    background-color: gray;">
-    
-       <p> Image Credit: <a href="https://ctfassets.ksldigital.com/0wjmk6wgfops/4KuzJkBNRjvK7qaiGdpY3I/e15f4f172dec7e80c4130cedf6b61ec0/95baf54302_60236543-90f9-4198-a748-327ddd0d3840.jpg?w=1280&h=800&fit=fill&f=center&q=80">KSL Digital</a></p>
-          &copy; 2025|Bladen Mckinlay| <a href="#">Tooele Technical College</a>
+
+    <footer>
+      <p>
+        Image Credit:
+        <a href="https://www.ksl.com">KSL Digital</a>
+      </p>
+      &copy; 2025 | Bladen Mckinlay | <a href="#">Tooele Technical College</a>
     </footer>
   </body>
 </html>
