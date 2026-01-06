@@ -1,6 +1,5 @@
 console.log("Weather script loaded");
 
-// Helper to capitalize descriptions
 function capitalizeWords(str) {
   return str
     .split(" ")
@@ -29,7 +28,6 @@ fetch(URL)
     const desc = capitalizeWords(data.weather[0].description);
     const iconCode = data.weather[0].icon;
 
-    // Populate the page
     temperature.textContent = temp;
     feelsLike.textContent = feels;
     humidity.textContent = humid;
@@ -68,8 +66,6 @@ fetch(forecastURL)
     }
   })
   
-// Get the current year from the system clock
-const year = new Date().getFullYear();
 
-// Find the span and replace its content
+const year = new Date().getFullYear();
 document.getElementById("currentYear").textContent = year;
