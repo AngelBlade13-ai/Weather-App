@@ -187,10 +187,10 @@ main {
   height: 50%;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;}
 
   /* ===== FOOTER ===== */
-  footer {
+  footer{
     text-align: center;
     padding: 1rem;
     background-color: #b1c4c5cc;
@@ -211,4 +211,4 @@ main {
       grid-template-columns: 1fr;
     }
   }
-}
+
